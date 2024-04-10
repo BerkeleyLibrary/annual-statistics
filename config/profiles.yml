@@ -1,0 +1,86 @@
+# Annual Stat Profile Rules
+# Based on directives from:
+# https://docs.google.com/document/d/1xcyb38z7PitSzRG4JmCKJRhgeLR_xJdXe6CqFjroCW4/edit#heading=h.skc9iieorkgu
+
+da:
+  name: da
+  root: /netapp/da
+  rules:
+    - target: top_level_folder
+      type: exclude
+      filter:
+        - cas
+        - UConly
+        - UCBonly
+    - target: sub_folders
+      type: exclude
+      filter:
+        - ead
+        - logs
+        - mets
+        - sgm
+
+da_ucbonly:
+  name: da_ucbonly
+  root: /netapp/da/UCBonly
+  rules:
+    - target: sub_folders
+      type: exclude
+      filter:
+        - ead
+        - logs
+        - mets
+        - sgm
+
+da_cas:
+  name: da_cas
+  root: /netapp/da/cas
+  rules:
+    - target: sub_folders
+      type: exclude
+      filter:
+        - ead
+        - logs
+        - mets
+        - sgm
+
+da_uconly:
+  name: da_uconly
+  root: /netapp/da/UConly
+  rules:
+    - target: sub_folders
+      type: exclude
+      filter:
+        - ead
+        - logs
+        - mets
+        - sgm
+
+pa:
+  name: pa
+  root: /netapp/pa
+  rules:
+    - target: files
+      type: include
+      filter:
+        - tif
+        - jpg
+        - wav
+        - mp4
+        - mp3
+        - mov
+        - zip
+        - JPG
+        - jpeg
+        - doc
+        - pdf
+        - avi
+        - jp2
+
+di_oda:
+  name: di_oda
+  root: /netapp/di/oda
+
+di_ft:
+  name: di_ft
+  root: /netapp/di/ft
